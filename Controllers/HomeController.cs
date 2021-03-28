@@ -12,6 +12,16 @@ namespace MvcApp.Controllers
   public class HomeController : Controller
   {
     private readonly ILogger<HomeController> _logger;
+    public static List<Role> roleInSystem = new List<Role>()
+    {
+      new Role { Id = 0, Name = "Admin" },
+      new Role { Id = 1, Name = "Visitor" }
+    };
+    public static List<User> userList = new List<User>
+      {
+        new User { Id = 0, Username = "admin", Password = "123" },
+        new User { Id = 1, Username = "notAdmin", Password = "1" }
+      };
     public HomeController(ILogger<HomeController> logger)
     {
       _logger = logger;
